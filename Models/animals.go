@@ -7,4 +7,5 @@ type Animal struct {
 	Breed   string
 	Age     int
 	OwnerID int
+	Picture []byte
 }
