@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
+	gui "AnimalTracker/GUI"
+	helpers "AnimalTracker/Helpers"
+	"fmt"
 )
 
 func main() {
-	a := app.New()
-	w := a.NewWindow("Hello World")
-
-	w.SetContent(widget.NewLabel("Hello World!"))
-	w.ShowAndRun()
+	fmt.Println("Starting Animal Tracker Application...")
+	db := helpers.CreateDatabase()
+	defer db.Close()
+	gui.OpenWindow()
 }
