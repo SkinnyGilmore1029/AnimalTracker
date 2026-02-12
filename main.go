@@ -1,6 +1,7 @@
 package main
 
 import (
+	GUI "AnimalTracker/GUI"
 	helpers "AnimalTracker/Helpers"
 	models "AnimalTracker/Models"
 	"fmt"
@@ -13,9 +14,8 @@ func main() {
 	models.CreateKidTable(db)
 	models.CreateAnimalTable(db)
 
-	models.ShowAllKids(db)
-	models.ShowAllAnimals(db)
-
 	fmt.Println("=====================================================")
 	fmt.Println("Database setup complete. You can now add kids and animals to the tracker.")
+	GUI.OpenWindow(db)
+
 }
